@@ -11,8 +11,9 @@ describe("About Applying What We Have Learnt", function() {
        { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
        { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
        { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
-    ];
+    ];  
   });
+  //products[].name
 
   /*********************************************************************************/
 
@@ -32,14 +33,27 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
+    console.log(productsICanEat);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
-
+      /*Solve using filter() & all() / any()*/
       var productsICanEat = [];
+      var porductsICanEat = products.filter(function(x){
+        return !x.containsNuts;
+      });
+      var productsICanEat = productsICanEat.filter(function(x){
+        return x.ingredients.some(function (y){
+          return x!=="mushrooms";
+        }
+      );
 
-      /* solve using filter() & all() / any() */
+      alert(noMush.length);
+      
+      
+     
+      
 
       expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
